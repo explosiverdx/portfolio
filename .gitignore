@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Build output (regenerate with npm run build)
+frontend/dist/
+
+# Sass / editor
+*.css.map
+.DS_Store
+*.log
