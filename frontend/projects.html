@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projects by Rohit Kumar — Full Stack Software Engineer." />
+    <title>Projects | Rohit Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-logo" href="index.html"><span class="site-logo__name">Rohit Kumar</span></a>
+        <div class="site-header__end">
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Toggle color theme"
+          >
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a class="site-nav__resume" href="resume/rohit-kumar-resume.pdf" download>Download Resume</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container site-main" id="main-content">
+      <header class="page-header">
+        <h1 class="page-title">Projects</h1>
+        <p class="page-lead">
+          Healthcare platforms, ERP-style system design, and production server setups—each project links to the same detail
+          card below for now; swap URLs when demos or repos are live.
+        </p>
+      </header>
+      <div class="projects-showcase">
+        <article class="project-card" id="aavya-hospital">
+          <div class="project-card__media">
+            <div class="project-card__placeholder" aria-hidden="true"></div>
+          </div>
+          <div class="project-card__body">
+            <h2 class="project-card__title">Aavya Hospital Website</h2>
+            <p class="project-card__desc">
+              Developed a healthcare website for hospital services, physiotherapy programs, and patient engagement.
+            </p>
+            <a class="btn btn--primary project-card__cta" href="#aavya-hospital">View project</a>
+          </div>
+        </article>
+        <article class="project-card" id="healthray-erp">
+          <div class="project-card__media">
+            <div class="project-card__placeholder" aria-hidden="true"></div>
+          </div>
+          <div class="project-card__body">
+            <h2 class="project-card__title">Healthray ERP Architecture</h2>
+            <p class="project-card__desc">
+              Designed a hospital ERP architecture inspired by Healthray ERP using microservices.
+            </p>
+            <a class="btn btn--primary project-card__cta" href="#healthray-erp">View project</a>
+          </div>
+        </article>
+        <article class="project-card" id="server-infrastructure">
+          <div class="project-card__media">
+            <div class="project-card__placeholder" aria-hidden="true"></div>
+          </div>
+          <div class="project-card__body">
+            <h2 class="project-card__title">Server Infrastructure Setup</h2>
+            <p class="project-card__desc">
+              Configured Ubuntu VPS servers including Nginx reverse proxy, SSL certificates, and application deployment.
+            </p>
+            <a class="btn btn--primary project-card__cta" href="#server-infrastructure">View project</a>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <p class="site-footer__name">Rohit Kumar</p>
+          <p class="site-footer__title">Full Stack Software Engineer</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <ul class="site-footer__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resume/rohit-kumar-resume.pdf" download>Resume</a></li>
+          </ul>
+        </nav>
+        <p class="site-footer__copy">© <span id="year"></span> Rohit Kumar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

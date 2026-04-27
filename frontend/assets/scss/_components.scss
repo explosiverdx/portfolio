@@ -1,0 +1,872 @@
+// =============================================================================
+// Components — reusable UI (buttons, cards, nav, projects, skills, forms)
+// =============================================================================
+
+@use "variables" as *;
+
+// --- Primary navigation ---
+.site-logo {
+  font-weight: 700;
+  font-size: $fs-lg;
+  color: $color-text;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.site-nav a {
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  color: $color-text-muted;
+  font-size: 0.9375rem;
+  font-weight: 500;
+
+  &:hover,
+  &.is-active {
+    color: $color-text;
+    background: $color-surface;
+  }
+}
+
+.site-nav a.site-nav__resume {
+  border: 1px solid $color-border;
+  color: $color-text;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $color-accent;
+    color: $color-accent;
+    background: rgba($color-surface, 0.65);
+  }
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  padding: 0;
+  flex-shrink: 0;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  color: $color-text-muted;
+  cursor: pointer;
+  transition: border-color $transition-fast, color $transition-fast, background $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px $color-focus-ring;
+  }
+}
+
+.theme-toggle__icon {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  box-shadow: inset 0 -3px 0 0 currentColor;
+}
+
+html[data-theme="light"] .theme-toggle__icon {
+  border-radius: $radius-sm;
+  box-shadow: none;
+  border-width: 0;
+  width: 0.65rem;
+  height: 0.65rem;
+  background: currentColor;
+  box-shadow: 0.35rem 0.35rem 0 -0.05rem currentColor;
+}
+
+.nav-toggle {
+  display: none;
+  padding: $space-sm;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  color: $color-text;
+  cursor: pointer;
+  font-size: $fs-sm;
+  font-family: inherit;
+  line-height: 1;
+}
+
+// --- Buttons ---
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  padding: $space-sm $space-lg;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background $transition-fast, border-color $transition-fast, color $transition-fast, box-shadow $transition-fast;
+}
+
+.btn--primary {
+  background: $color-accent;
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+
+  &:hover {
+    background: $color-accent-hover;
+    color: #fff;
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: $color-border;
+  color: $color-text;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+}
+
+// --- Cards (base + project variant) ---
+.card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  transition: border-color $transition-base, background $transition-base;
+}
+
+.card:hover {
+  border-color: $color-border-strong;
+  background: $color-surface-hover;
+}
+
+.card--project {
+  border-left: 3px solid $color-accent;
+}
+
+.card__title {
+  margin: 0 0 $space-sm;
+  font-size: $fs-xl;
+  font-weight: 600;
+}
+
+.card__meta {
+  margin: 0 0 $space-md;
+  font-family: $font-mono;
+  font-size: $fs-sm;
+  color: $color-text-muted;
+}
+
+.card__text {
+  margin: 0;
+  color: $color-text-muted;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+// --- Project grid ---
+.grid-2 {
+  display: grid;
+  gap: $space-lg;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+// --- Project showcase cards ---
+.projects-showcase {
+  display: grid;
+  gap: $space-lg;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  border-left: 3px solid $color-accent;
+  transition: border-color $transition-base, box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    border-color: $color-border-strong;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    transform: translateY(-4px);
+  }
+
+  &:hover .project-card__placeholder {
+    filter: brightness(1.08);
+  }
+}
+
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: $color-bg;
+  border-bottom: 1px solid $color-border;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity $transition-base;
+    background: radial-gradient(
+      120% 90% at var(--pointer-x, 50%) var(--pointer-y, 45%),
+      rgba($color-accent, 0.35),
+      transparent 55%
+    );
+  }
+}
+
+.project-card:hover .project-card__media::after {
+  opacity: 1;
+}
+
+.project-card__placeholder {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(155deg, rgba($color-accent, 0.1) 0%, transparent 52%),
+    repeating-linear-gradient(
+      -38deg,
+      rgba($color-border, 0.65),
+      rgba($color-border, 0.65) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+  color: $color-text-subtle;
+  font-family: $font-mono;
+  font-size: $fs-xs;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: filter $transition-base;
+
+  &::after {
+    content: "Screenshot";
+  }
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+  padding: $space-lg $space-xl $space-xl;
+}
+
+.project-card__title {
+  margin: 0 0 $space-md;
+  font-size: $fs-xl;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: $color-text;
+}
+
+.project-card__desc {
+  margin: 0 0 $space-lg;
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: $color-text-muted;
+}
+
+.project-card__cta {
+  align-self: flex-start;
+}
+
+// --- Hero (home) ---
+@keyframes hero-gradient-drift {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate(2%, -3%) scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-1%, 2%) scale(1.02);
+    opacity: 0.88;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-block: $space-2xl $space-3xl;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.hero__surface {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse 100% 80% at 10% 20%, rgba($color-accent, 0.18), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 90% 60%, rgba(94, 234, 212, 0.06), transparent 50%),
+    linear-gradient(155deg, rgba($color-surface, 0.95) 0%, rgba($color-bg, 0.65) 45%, rgba($color-surface, 0.88) 100%);
+  border: 1px solid $color-border;
+  animation: hero-gradient-drift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: min(46rem, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(#{$space-sm}, 4vw, #{$space-xl});
+  box-sizing: border-box;
+}
+
+.hero__eyebrow {
+  margin: 0 0 $space-lg;
+  font-family: $font-mono;
+  font-size: $fs-sm;
+  letter-spacing: 0.04em;
+  color: $color-text-muted;
+  animation: hero-fade-up 0.75s ease-out 0.05s both;
+}
+
+.hero__name {
+  color: $color-accent;
+  font-weight: 500;
+}
+
+.hero__eyebrow-sep {
+  margin: 0 $space-sm;
+  color: $color-border-strong;
+}
+
+.hero__role {
+  color: $color-text-muted;
+  font-weight: 500;
+}
+
+.hero__headline {
+  margin: 0 0 $space-lg;
+  max-width: 100%;
+  font-size: clamp(1.35rem, 2vw + 0.85rem, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.22;
+  color: $color-text;
+  text-wrap: balance;
+  overflow-wrap: normal;
+  hyphens: manual;
+  animation: hero-fade-up 0.75s ease-out 0.14s both;
+}
+
+.hero__intro {
+  margin: 0;
+  max-width: 42rem;
+  font-size: $fs-md;
+  color: $color-text-muted;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+  animation: hero-fade-up 0.75s ease-out 0.22s both;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  margin-top: $space-xl;
+  animation: hero-fade-up 0.75s ease-out 0.3s both;
+}
+
+// --- About preview block ---
+.about-preview__text {
+  margin: 0 0 $space-lg;
+  color: $color-text-muted;
+  font-size: $fs-base;
+  line-height: 1.65;
+}
+
+.about-preview__link {
+  align-self: flex-start;
+}
+
+.about-preview .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// --- About page (bio + timeline) ---
+.about-page {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3xl;
+}
+
+.about-bio__heading {
+  margin: 0 0 $space-lg;
+  font-size: $fs-xl;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+}
+
+.about-bio__content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+}
+
+.about-bio__content p {
+  margin: 0;
+  font-size: $fs-md;
+  line-height: 1.75;
+  color: $color-text-muted;
+}
+
+.about-bio__content strong {
+  color: $color-text;
+  font-weight: 600;
+}
+
+.about-timeline-section__title {
+  margin: 0 0 $space-sm;
+  font-size: $fs-3xl;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+}
+
+.about-timeline-section__lead {
+  margin: 0 0 $space-2xl;
+  max-width: 40rem;
+  font-size: $fs-base;
+  line-height: 1.65;
+  color: $color-text-muted;
+}
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 2px;
+  border-radius: 1px;
+  background: linear-gradient(180deg, $color-accent 0%, rgba($color-accent, 0.25) 55%, $color-border 100%);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: $space-lg;
+  padding-bottom: $space-2xl;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__marker {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.35rem;
+  margin-left: 0.19rem;
+  border-radius: 50%;
+  background: $color-accent;
+  box-shadow: 0 0 0 4px rgba($color-accent, 0.22);
+  flex-shrink: 0;
+}
+
+.timeline__body {
+  padding: $space-lg $space-xl;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  border-left: 3px solid $color-accent;
+  transition: border-color $transition-base, box-shadow $transition-base;
+}
+
+.timeline__item:hover .timeline__body {
+  border-color: $color-border-strong;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.timeline__period {
+  margin: 0 0 $space-xs;
+  font-family: $font-mono;
+  font-size: $fs-sm;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $color-accent;
+}
+
+.timeline__title {
+  margin: 0 0 $space-md;
+  font-size: $fs-lg;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: $color-text;
+}
+
+.timeline__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: $color-text-muted;
+}
+
+.timeline__text strong {
+  color: $color-text;
+  font-weight: 600;
+}
+
+// --- Skills (categorized cards + tags) ---
+.skills-categories {
+  display: grid;
+  gap: $space-lg;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.skills-card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  padding: $space-lg;
+  background: linear-gradient(165deg, rgba($color-surface, 0.98) 0%, rgba($color-bg, 0.55) 100%);
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  border-top: 3px solid $color-accent;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transition: border-color $transition-base, box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    border-color: $color-border-strong;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+    transform: translateY(-2px);
+  }
+}
+
+.skills-card__title {
+  margin: 0;
+  font-size: $fs-sm;
+  font-family: $font-mono;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $color-accent;
+}
+
+.skills-card__tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.skill-chip {
+  display: inline-block;
+  padding: $space-sm $space-md;
+  font-family: $font-mono;
+  font-size: $fs-sm;
+  font-weight: 500;
+  color: $color-text;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  transition: border-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent;
+  }
+}
+
+// --- Contact CTA band ---
+.contact-cta {
+  text-align: center;
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: $space-2xl;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+}
+
+.contact-cta__title {
+  margin: 0 0 $space-md;
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+}
+
+.contact-cta__text {
+  margin: 0 0 $space-xl;
+  color: $color-text-muted;
+  font-size: $fs-base;
+  line-height: 1.65;
+}
+
+// --- Contact section (form + social) ---
+.contact-section {
+  margin-top: 0;
+}
+
+.contact-section__grid {
+  display: grid;
+  gap: $space-xl;
+  grid-template-columns: 1fr;
+}
+
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-panel__title {
+  margin: 0 0 $space-sm;
+  font-size: $fs-xl;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-text;
+}
+
+.contact-panel__lead {
+  margin: 0 0 $space-xl;
+  font-size: $fs-sm;
+  line-height: 1.6;
+  color: $color-text-muted;
+}
+
+.contact-panel__lead code {
+  font-size: 0.9em;
+}
+
+.contact-panel--aside .contact-panel__lead {
+  margin-bottom: $space-lg;
+}
+
+.contact-form {
+  margin: 0;
+}
+
+.contact-form .form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.contact-form__footer {
+  margin-top: $space-xl;
+  padding-top: $space-md;
+  border-top: 1px solid $color-border;
+}
+
+// --- Forms ---
+.form-group {
+  margin-bottom: $space-lg;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: $space-sm;
+  font-size: $fs-sm;
+  font-weight: 500;
+  color: $color-text-muted;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: $space-md $space-md;
+  font-family: inherit;
+  font-size: $fs-base;
+  color: $color-text;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  transition: border-color $transition-fast, box-shadow $transition-fast, background $transition-fast;
+
+  &::placeholder {
+    color: $color-text-subtle;
+  }
+
+  &:hover {
+    border-color: $color-border-strong;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent;
+    background: rgba($color-bg-elevated, 0.6);
+    box-shadow: 0 0 0 3px $color-focus-ring;
+  }
+}
+
+.form-group textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+// --- Social link list (contact) ---
+.social-nav {
+  margin: 0;
+}
+
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.social-links__link {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  padding: $space-md $space-lg;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  background: $color-bg;
+  color: $color-text;
+  font-weight: 500;
+  transition: border-color $transition-fast, background $transition-fast, color $transition-fast, transform $transition-fast;
+
+  &:hover {
+    border-color: $color-accent;
+    color: $color-accent;
+    background: rgba($color-surface, 0.85);
+    transform: translateX(4px);
+  }
+}
+
+.social-links__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  font-family: $font-mono;
+  font-size: $fs-xs;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $color-accent;
+  background: rgba($color-accent, 0.12);
+  border: 1px solid rgba($color-accent, 0.28);
+  border-radius: $radius-sm;
+}
+
+.social-links__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.social-links__name {
+  font-size: $fs-base;
+  font-weight: 600;
+  color: inherit;
+}
+
+.social-links__hint {
+  font-family: $font-mono;
+  font-size: $fs-xs;
+  font-weight: 400;
+  color: $color-text-subtle;
+}
+
+.social-links__link:hover .social-links__hint {
+  color: $color-text-muted;
+}
+
+// --- Scroll-driven reveal (requires JS: html.js-reveal) ---
+html.js-reveal .reveal-target {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js-reveal .reveal-target.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+// --- Utilities ---
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Rohit Kumar — Full Stack Software Engineer specializing in MERN, APIs, databases, and Linux deployment."
+    />
+    <title>About | Rohit Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-logo" href="index.html"><span class="site-logo__name">Rohit Kumar</span></a>
+        <div class="site-header__end">
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Toggle color theme"
+          >
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a class="site-nav__resume" href="resume/rohit-kumar-resume.pdf" download>Download Resume</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container site-main" id="main-content">
+      <header class="page-header">
+        <h1 class="page-title">About</h1>
+        <p class="page-lead">
+          Full stack software engineer with a focus on reliable APIs, thoughtful data modeling, and production-ready
+          deployments.
+        </p>
+      </header>
+
+      <div class="about-page">
+        <article class="card about-bio" aria-labelledby="bio-heading">
+          <h2 class="about-bio__heading" id="bio-heading">Professional biography</h2>
+          <div class="about-bio__content">
+            <p>
+              Rohit Kumar is a Full Stack Software Engineer who builds end-to-end web applications using the
+              <strong>MERN stack</strong>—MongoDB, Express.js, React, and Node.js—alongside modern tooling for testing,
+              version control, and continuous delivery. He cares about clear contracts between client and server,
+              predictable API behavior, and code that teammates can extend with confidence.
+            </p>
+            <p>
+              On the <strong>backend</strong>, Rohit designs and implements <strong>RESTful APIs</strong>, handles
+              authentication and authorization patterns, and integrates services so frontends stay fast and decoupled. He
+              works comfortably with <strong>database systems</strong> across the spectrum: document modeling and queries in
+              <strong>MongoDB</strong>, and relational design, SQL, and performance-minded indexing in
+              <strong>PostgreSQL</strong>—choosing the right store for the problem rather than forcing a one-size-fits-all
+              approach.
+            </p>
+            <p>
+              Rohit also owns <strong>server deployment</strong> workflows on <strong>Ubuntu VPS</strong> hosts:
+              provisioning environments, deploying applications, and hardening paths to production. He configures
+              <strong>Nginx</strong> as a reverse proxy, terminates TLS with certificates from <strong>SSL / Let’s
+              Encrypt</strong>, and verifies that traffic is served securely over HTTPS with sensible headers and renewals
+              in place.
+            </p>
+            <p>
+              Whether shipping a healthcare-facing site, sketching microservice boundaries for an ERP-style platform, or
+              tuning infrastructure behind the scenes, he combines engineering rigor with a practical bias toward
+              shipping value early and iterating with feedback.
+            </p>
+          </div>
+        </article>
+
+        <section class="about-timeline-section" id="journey" aria-labelledby="timeline-heading">
+          <h2 class="about-timeline-section__title" id="timeline-heading">Experience &amp; learning journey</h2>
+          <p class="about-timeline-section__lead">
+            A condensed path from fundamentals to full stack ownership—each stage built on the last.
+          </p>
+          <ol class="timeline" aria-label="Professional experience and learning timeline">
+            <li class="timeline__item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__body">
+                <p class="timeline__period">Foundations</p>
+                <h3 class="timeline__title">Web fundamentals &amp; JavaScript</h3>
+                <p class="timeline__text">
+                  Deepened HTML, CSS, and JavaScript—layout systems, accessibility basics, and asynchronous programming—so
+                  later framework work rested on solid browser and language fundamentals.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__body">
+                <p class="timeline__period">Full stack · MERN</p>
+                <h3 class="timeline__title">Applications with MongoDB, Express, React &amp; Node</h3>
+                <p class="timeline__text">
+                  Built and refactored MERN applications: component-driven UIs in React, Express routes and middleware on
+                  the server, and JSON APIs that stay consistent as features grow. Learned to structure modules, share
+                  types where helpful, and keep deployment artifacts lean.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__body">
+                <p class="timeline__period">Backend &amp; APIs</p>
+                <h3 class="timeline__title">Services, validation &amp; integration</h3>
+                <p class="timeline__text">
+                  Focused on API design—status codes, error payloads, pagination, and idempotent operations where
+                  appropriate—plus integration with databases and third-party services without leaking complexity to the
+                  client.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__body">
+                <p class="timeline__period">Data layer</p>
+                <h3 class="timeline__title">MongoDB &amp; PostgreSQL in production shapes</h3>
+                <p class="timeline__text">
+                  Modeled data in MongoDB for flexible domains and used PostgreSQL where relational integrity, joins, and
+                  reporting mattered. Practiced migrations, constraints, and query plans so APIs stayed responsive as data
+                  volume increased.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__body">
+                <p class="timeline__period">DevOps &amp; infrastructure</p>
+                <h3 class="timeline__title">Ubuntu VPS, Nginx &amp; SSL</h3>
+                <p class="timeline__text">
+                  Provisioned Ubuntu servers, deployed applications behind <strong>Nginx</strong> reverse proxies, and
+                  automated <strong>SSL</strong> with <strong>Let’s Encrypt</strong>—including renewal hooks and sensible
+                  TLS defaults—so users reach apps over HTTPS reliably while origin servers stay maintainable.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__body">
+                <p class="timeline__period">Today</p>
+                <h3 class="timeline__title">Full stack ownership</h3>
+                <p class="timeline__text">
+                  Continues to ship features across the stack—from UI polish and API hardening to database tuning and
+                  server configuration—always aiming for systems that are observable, documented enough for the next
+                  engineer, and kind to operators at 2&nbsp;a.m.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <p class="site-footer__name">Rohit Kumar</p>
+          <p class="site-footer__title">Full Stack Software Engineer</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <ul class="site-footer__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resume/rohit-kumar-resume.pdf" download>Resume</a></li>
+          </ul>
+        </nav>
+        <p class="site-footer__copy">© <span id="year"></span> Rohit Kumar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

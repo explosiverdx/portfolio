@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rohit Kumar — Full Stack Software Engineer portfolio." />
+    <title>Rohit Kumar | Full Stack Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="site-logo" href="index.html"><span class="site-logo__name">Rohit Kumar</span></a>
+        <div class="site-header__end">
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-pressed="false"
+            aria-label="Switch to light theme"
+            title="Toggle color theme"
+          >
+            <span class="theme-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a class="site-nav__resume" href="resume/rohit-kumar-resume.pdf" download>Download Resume</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="container site-main site-main--home" id="main-content">
+      <section class="hero" id="hero" aria-labelledby="hero-heading">
+        <div class="hero__surface" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <p class="hero__eyebrow">
+            <span class="hero__name">Rohit Kumar</span>
+            <span class="hero__eyebrow-sep" aria-hidden="true">·</span>
+            <span class="hero__role">Full Stack Software Engineer</span>
+          </p>
+          <h1 class="hero__headline" id="hero-heading">Building scalable web applications and backend systems</h1>
+          <p class="hero__intro">
+            Rohit Kumar is a full stack developer experienced in MERN stack development, backend APIs, database design, and
+            scalable server architecture.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects-preview">View Projects</a>
+            <a class="btn btn--ghost" href="contact.html">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about-preview" aria-labelledby="about-preview-heading">
+        <div class="section__head">
+          <h2 class="section__title" id="about-preview-heading">About</h2>
+          <p class="section__lead">A quick snapshot of who I am and how I work.</p>
+        </div>
+        <div class="about-preview">
+          <div class="about-preview__content card">
+            <p class="about-preview__text">
+              I am a full stack engineer who enjoys shipping products that feel fast and intentional. I collaborate closely
+              with teammates, write code that is easy to reason about, and care about the details users notice.
+            </p>
+            <a class="btn btn--ghost about-preview__link" href="about.html">Read more about me</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-heading">
+        <div class="section__head">
+          <h2 class="section__title" id="skills-heading">Skills</h2>
+          <p class="section__lead">Technologies and tools I use across frontend, backend, data, and operations.</p>
+        </div>
+        <div class="skills-categories">
+          <article class="skills-card">
+            <h3 class="skills-card__title">Frontend</h3>
+            <ul class="skills-card__tags" aria-label="Frontend skills">
+              <li><span class="skill-chip">HTML</span></li>
+              <li><span class="skill-chip">CSS</span></li>
+              <li><span class="skill-chip">JavaScript</span></li>
+              <li><span class="skill-chip">React.js</span></li>
+              <li><span class="skill-chip">Bootstrap</span></li>
+            </ul>
+          </article>
+          <article class="skills-card">
+            <h3 class="skills-card__title">Backend</h3>
+            <ul class="skills-card__tags" aria-label="Backend skills">
+              <li><span class="skill-chip">Node.js</span></li>
+              <li><span class="skill-chip">Express.js</span></li>
+              <li><span class="skill-chip">Java Microservices</span></li>
+            </ul>
+          </article>
+          <article class="skills-card">
+            <h3 class="skills-card__title">Database</h3>
+            <ul class="skills-card__tags" aria-label="Database skills">
+              <li><span class="skill-chip">MongoDB</span></li>
+              <li><span class="skill-chip">PostgreSQL</span></li>
+            </ul>
+          </article>
+          <article class="skills-card">
+            <h3 class="skills-card__title">DevOps &amp; Tools</h3>
+            <ul class="skills-card__tags" aria-label="DevOps and tools">
+              <li><span class="skill-chip">Git</span></li>
+              <li><span class="skill-chip">GitHub</span></li>
+              <li><span class="skill-chip">Linux</span></li>
+              <li><span class="skill-chip">Nginx</span></li>
+              <li><span class="skill-chip">SSL / Let’s Encrypt</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects-preview" aria-labelledby="projects-preview-heading">
+        <div class="section__head">
+          <h2 class="section__title" id="projects-preview-heading">Projects</h2>
+          <p class="section__lead">Selected work spanning healthcare web platforms, enterprise architecture, and infrastructure.</p>
+        </div>
+        <div class="projects-showcase">
+          <article class="project-card" id="preview-aavya-hospital">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Aavya Hospital Website</h3>
+              <p class="project-card__desc">
+                Developed a healthcare website for hospital services, physiotherapy programs, and patient engagement.
+              </p>
+              <a class="btn btn--primary project-card__cta" href="projects.html#aavya-hospital">View project</a>
+            </div>
+          </article>
+          <article class="project-card" id="preview-healthray-erp">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Healthray ERP Architecture</h3>
+              <p class="project-card__desc">
+                Designed a hospital ERP architecture inspired by Healthray ERP using microservices.
+              </p>
+              <a class="btn btn--primary project-card__cta" href="projects.html#healthray-erp">View project</a>
+            </div>
+          </article>
+          <article class="project-card" id="preview-server-infra">
+            <div class="project-card__media">
+              <div class="project-card__placeholder" aria-hidden="true"></div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Server Infrastructure Setup</h3>
+              <p class="project-card__desc">
+                Configured Ubuntu VPS servers including Nginx reverse proxy, SSL certificates, and application deployment.
+              </p>
+              <a class="btn btn--primary project-card__cta" href="projects.html#server-infrastructure">View project</a>
+            </div>
+          </article>
+        </div>
+        <p class="section__actions">
+          <a class="btn btn--ghost" href="projects.html">View all projects</a>
+        </p>
+      </section>
+
+      <section class="section section--cta" id="contact-cta" aria-labelledby="contact-cta-heading">
+        <div class="contact-cta">
+          <h2 class="contact-cta__title" id="contact-cta-heading">Let’s build something</h2>
+          <p class="contact-cta__text">
+            Have an idea, a role, or a collaboration in mind? Send a message—I’d love to hear what you are working on.
+          </p>
+          <a class="btn btn--primary" href="contact.html">Contact me</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <p class="site-footer__name">Rohit Kumar</p>
+          <p class="site-footer__title">Full Stack Software Engineer</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <ul class="site-footer__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resume/rohit-kumar-resume.pdf" download>Resume</a></li>
+          </ul>
+        </nav>
+        <p class="site-footer__copy">© <span id="year"></span> Rohit Kumar. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

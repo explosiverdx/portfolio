@@ -1,0 +1,212 @@
+// =============================================================================
+// Responsive — tablet & mobile breakpoints
+// =============================================================================
+
+@use "variables" as *;
+
+// -----------------------------------------------------------------------------
+// Primary nav — drawer layout (tablets + narrow desktops)
+// -----------------------------------------------------------------------------
+@include nav-drawer {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: $space-md;
+    background: $color-bg-elevated;
+    border-bottom: 1px solid $color-border;
+    display: none;
+    z-index: $z-header;
+
+    &.is-open {
+      display: flex;
+    }
+  }
+
+  .site-header__inner {
+    position: relative;
+  }
+
+  .site-nav a {
+    width: 100%;
+    text-align: center;
+    padding-block: $space-md;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-nav a.site-nav__resume {
+    margin-top: $space-sm;
+    justify-content: center;
+  }
+
+  .site-logo {
+    min-width: 0;
+    flex-shrink: 1;
+    font-size: clamp(0.9375rem, 3.5vw, 1.125rem);
+  }
+
+  .container {
+    padding-inline: clamp(#{$space-sm}, 4vw, #{$space-lg});
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Primary nav — full horizontal bar
+// -----------------------------------------------------------------------------
+@include nav-inline {
+  .nav-toggle {
+    display: none !important;
+  }
+
+  .site-nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: $space-xs;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .site-nav a {
+    text-align: left;
+    padding: $space-sm $space-sm;
+    font-size: clamp(0.8125rem, 1.1vw, 0.9375rem);
+  }
+
+  .site-nav a.site-nav__resume {
+    margin-top: 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Small phones — tighter rhythm only
+// -----------------------------------------------------------------------------
+@include mobile-only {
+  .site-main {
+    padding-block: $space-xl $space-2xl;
+  }
+
+  .hero {
+    padding-block: $space-xl $space-2xl;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Tablet and up (640px+)
+// -----------------------------------------------------------------------------
+@include tablet-up {
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skills-categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-section__grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    align-items: start;
+  }
+
+  .site-footer__inner {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: left;
+  }
+
+  .site-footer__list {
+    justify-content: center;
+  }
+
+  .site-footer__copy {
+    text-align: right;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Desktop (1024px+) — optional refinements
+// -----------------------------------------------------------------------------
+@include desktop-up {
+  .container {
+    padding-inline: $space-xl;
+  }
+
+  .hero {
+    padding-block: $space-3xl $space-4xl;
+  }
+
+  .skills-categories {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .projects-showcase {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+// --- Respect reduced motion (hero animation + smooth scroll) ---
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero__surface {
+    animation: none;
+  }
+
+  .hero__eyebrow,
+  .hero__headline,
+  .hero__intro,
+  .hero__actions {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .skills-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__placeholder {
+    filter: none;
+  }
+
+  .project-card:hover .project-card__media::after {
+    opacity: 0;
+  }
+
+  html.js-reveal .reveal-target {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .timeline__item:hover .timeline__body {
+    box-shadow: none;
+  }
+
+  .social-links__link:hover {
+    transform: none;
+  }
+}
