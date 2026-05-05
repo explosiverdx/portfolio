@@ -4,16 +4,25 @@
   "version": "1.0.0",
   "description": "Static portfolio site (HTML, SCSS, vanilla JS)",
   "scripts": {
-    "build": "npm run build:css && node scripts/build-dist.js",
-    "build:prod": "sass --no-source-map --style=compressed assets/scss/main.scss css/main.css && node scripts/build-dist.js",
+    "build": "npm run build:css && npm run build:biodata && node scripts/build-dist.js",
+    "build:prod": "sass --no-source-map --style=compressed assets/scss/main.scss css/main.css && npm run build:biodata && node scripts/build-dist.js",
     "build:css": "sass --no-source-map assets/scss/main.scss css/main.css",
+    "build:biodata": "vite build --config biodata-src/vite.config.mjs",
     "build:dist": "node scripts/build-dist.js",
     "watch:css": "sass --watch assets/scss/main.scss:css/main.css",
-    "dev": "concurrently -k -n scss,site -c cyan,magenta \"npm run watch:css\" \"serve . -p 3000\""
+    "dev": "concurrently -k -n scss,site -c cyan,magenta \"npm run watch:css\" \"serve . -p 3000\"",
+    "biodata:dev": "vite --config biodata-src/vite.config.mjs"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
     "concurrently": "^9.1.2",
     "sass": "^1.86.0",
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "vite": "^7.1.0"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

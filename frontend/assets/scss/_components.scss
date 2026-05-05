@@ -844,6 +844,293 @@ html[data-theme="light"] .theme-toggle__icon {
   color: $color-text-muted;
 }
 
+// --- Biodata page ---
+.biodata-theme {
+  color: #2f2431;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(220, 107, 146, 0.16), transparent 34%),
+    radial-gradient(circle at 86% 18%, rgba(175, 130, 204, 0.12), transparent 36%),
+    linear-gradient(180deg, #fffaf7 0%, #fff2f7 52%, #fef8f2 100%);
+}
+
+.biodata-theme .site-main {
+  padding-block: $space-xl $space-2xl;
+}
+
+.biodata-page {
+  max-width: 60rem;
+}
+
+.biodata-page .page-header {
+  margin-bottom: $space-xl;
+  text-align: center;
+}
+
+.biodata-page .page-title {
+  margin-bottom: $space-xs;
+  color: #8c2f58;
+  letter-spacing: -0.02em;
+}
+
+.biodata-page .page-lead {
+  margin: 0 auto;
+  color: #7d5a6d;
+  font-size: 1.03rem;
+}
+
+.biodata-page .section {
+  padding-block: $space-lg 0;
+  border-top: 0;
+}
+
+.biodata-page .section__head {
+  margin-bottom: $space-md;
+}
+
+.biodata-page .section__title {
+  color: #8c2f58;
+  font-size: clamp(1.3rem, 2vw, 1.55rem);
+}
+
+.biodata-sheet {
+  border: 1px solid #efd7e5;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 252, 0.95));
+  box-shadow:
+    0 14px 36px rgba(158, 83, 123, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.biodata-sheet .card__title {
+  color: #8c2f58;
+}
+
+.biodata-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+  align-items: start;
+}
+
+.biodata-profile__intro {
+  margin: 0 0 $space-md;
+  color: #5d4658;
+  line-height: 1.6;
+}
+
+.biodata-profile__highlights {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #473449;
+  display: grid;
+  gap: $space-xs;
+}
+
+.biodata-profile__highlights li {
+  line-height: 1.45;
+}
+
+.biodata-profile__highlights strong {
+  color: #8c2f58;
+}
+
+.biodata-photo {
+  justify-self: center;
+}
+
+.biodata-photo__frame {
+  width: 150px;
+  aspect-ratio: 3.5 / 4.5;
+  border: 2px dashed #d6a8bc;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fffefe, #fff5f9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #8f6076;
+}
+
+.biodata-photo__label {
+  font-weight: 700;
+  color: #8c2f58;
+  margin-bottom: $space-xs;
+}
+
+.biodata-photo__size {
+  font-size: $fs-xs;
+  font-family: $font-mono;
+}
+
+.biodata-grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+}
+
+.biodata-item {
+  padding: $space-md;
+  border: 1px solid #f0dce7;
+  border-radius: $radius-md;
+  background: #fffdfd;
+}
+
+.biodata-item dt {
+  margin: 0 0 $space-xs;
+  font-family: $font-mono;
+  font-size: $fs-xs;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #a56f87;
+}
+
+.biodata-item dd {
+  margin: 0;
+  color: #3f2e44;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.biodata-item a {
+  color: #9b2f62;
+  font-weight: 600;
+
+  &:hover {
+    color: #7f224f;
+  }
+}
+
+// --- Biodata print (A4-friendly) ---
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  body.biodata-theme {
+    background: #fff !important;
+  }
+
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+
+  .biodata-page {
+    max-width: none;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .biodata-page .page-header {
+    margin: 0 0 6mm;
+    text-align: left;
+  }
+
+  .biodata-page .section {
+    padding: 3mm 0 0;
+    border-top: 0;
+  }
+
+  .biodata-page .section__head {
+    margin: 0 0 3mm;
+  }
+
+  .biodata-page .page-title,
+  .biodata-page .section__title,
+  .biodata-sheet .card__title {
+    color: #1f1f1f !important;
+  }
+
+  .biodata-page .page-lead,
+  .biodata-item dt {
+    color: #4b4b4b !important;
+  }
+
+  .biodata-sheet {
+    border: 1px solid #cfcfcf;
+    background: #fff !important;
+    box-shadow: none !important;
+    border-radius: 4mm;
+  }
+
+  .biodata-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5mm;
+  }
+
+  .biodata-item {
+    padding: 2.5mm;
+    border: 1px solid #d9d9d9;
+    background: #fff !important;
+    break-inside: avoid-page;
+  }
+
+  .biodata-item dd {
+    color: #111 !important;
+  }
+
+  .biodata-stack,
+  .biodata-sheet {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .biodata-profile {
+    grid-template-columns: 1fr 28mm;
+    gap: 4mm;
+    margin-bottom: 2mm;
+  }
+
+  .biodata-profile__intro {
+    margin-bottom: 2.5mm;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  .biodata-profile__highlights {
+    gap: 1mm;
+    padding-left: 4mm;
+    font-size: 9.5pt;
+  }
+
+  .biodata-photo {
+    justify-self: end;
+  }
+
+  .biodata-photo__frame {
+    width: 28mm;
+    border-radius: 2mm;
+    border-color: #b8b8b8;
+    background: #fff !important;
+  }
+
+  .biodata-photo__label,
+  .biodata-photo__size {
+    color: #333 !important;
+  }
+
+  .biodata-item a {
+    color: #111 !important;
+    text-decoration: none;
+  }
+
+  .reveal-target,
+  .is-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
 // --- Scroll-driven reveal (requires JS: html.js-reveal) ---
 html.js-reveal .reveal-target {
   opacity: 0;

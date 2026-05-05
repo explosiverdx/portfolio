@@ -10,6 +10,8 @@ SITE_URL=https://yourdomain.com npm run build
 ```
 
 - Output is **`dist/`** — that entire folder is the static site (HTML, `css/`, `assets/`, `resume/`, `404.html`, `sitemap.xml`, `robots.txt`).
+- Biodata is now a React + GSAP app built from `biodata-src/` into `/biodata` automatically during `npm run build`.
+- The marriage biodata route is published at **`/biodata`** from `frontend/biodata/index.html` (not linked from homepage).
 - **`npm run build:prod`** — minified CSS + `dist` (good for production). Run **`npm run build:css`** afterward if you want a readable `css/main.css` for local dev.
 
 Set **`SITE_URL`** to the **HTTPS hostname** you use on the VPS (no trailing slash), so `sitemap.xml` and `robots.txt` are correct.

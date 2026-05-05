@@ -100,6 +100,11 @@ if (fs.existsSync(resumeDir)) {
   fs.cpSync(resumeDir, path.join(dist, "resume"), { recursive: true });
 }
 
+const biodataDir = path.join(root, "biodata");
+if (fs.existsSync(biodataDir)) {
+  fs.cpSync(biodataDir, path.join(dist, "biodata"), { recursive: true });
+}
+
 writeSitemap();
 writeRobots();
 
